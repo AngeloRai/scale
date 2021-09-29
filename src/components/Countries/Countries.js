@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import CountryCard from "./CountryCard";
 
 function Countries() {
   const [countries, setCountires] = useState([]);
@@ -35,25 +36,11 @@ function Countries() {
         <div>
           {countries &&
             countries.map((country, i) => (
-              <div
-                className="row"
-                style={{ backgroundColor: i % 2 === 0 ? "#ccc6c6" : "white" }}
-              >
-                <div className="col-5">
-                  {country.name} ({country.code})
-                </div>
-
-                <div className="col-12 col-md-6">
-                  {country.fronteiras &&
-                    country.fronteiras.map((borderCountry) => (
-                      <span>{borderCountry}&nbsp;</span>
-                    ))}
-                  <div className="col-12">
-                    Faz fronteira com{" "}
-                    <strong>{country.fronteiras.length}</strong> países.
-                  </div>
-                </div>
-              </div>
+              <CountryCard 
+                country={country}
+                i={i}
+                key={i}
+              />
             ))}
         </div>
       )}

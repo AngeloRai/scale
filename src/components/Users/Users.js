@@ -45,7 +45,7 @@ function Users() {
           {loading ? (
             <p>Loading...</p>
           ) : (
-            currentUsers.map((user) => <UserCard user={user} />)
+            currentUsers.map((user, index) => <UserCard user={user} key={index}/>)
           )}
         </div>
         {users && (
