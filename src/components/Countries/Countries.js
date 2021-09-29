@@ -6,9 +6,7 @@ function Countries() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const fetchCountries = async () => {
-      
       const fetchedCountries = await axios(
         "https://www.amock.io/api/fcmaia/countries"
       );
@@ -17,17 +15,13 @@ function Countries() {
         (a, b) => b.fronteiras.length - a.fronteiras.length
       );
 
-      console.log(sortedCountries);
-
       setCountires(sortedCountries);
-      console.log(fetchedCountries.data);
-      setLoading(false)
+
+      setLoading(false);
     };
 
     fetchCountries();
   }, []);
-
-  console.log(countries);
 
   return (
     <div className="container border shadow my-5">
