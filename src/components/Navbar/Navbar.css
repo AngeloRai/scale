@@ -1,0 +1,28 @@
+.navbar {
+  height: 100px;
+  background-color: rgb(70, 65, 65);
+  color: rgb(202, 198, 198);
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar a:focus {
+  color: rgb(105, 184, 172);
+  text-decoration: none;
+}
+
+.navbar h3 {
+  margin: 0 2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .navbar h3 {
+    margin: 0 .5rem;
+  }
+}
+
+
+
